@@ -57,6 +57,7 @@ function renderProject(name, description, language, url) {
 
         projectDiv.classname = 'projects';
         projectName.innerText = name;
+        projectUrl.href = url;
         
         if (language == 'JavaScript') {
             language = 'yellow'
@@ -87,7 +88,7 @@ async function main() {
 
     for (const project of projects) {
         if (project.stargazers_count >= 1) {
-            addProject(project.name, project.description, project.language, project.url);
+            addProject(project.name, project.description, project.language, project.html_url);
         }
     }
 }
